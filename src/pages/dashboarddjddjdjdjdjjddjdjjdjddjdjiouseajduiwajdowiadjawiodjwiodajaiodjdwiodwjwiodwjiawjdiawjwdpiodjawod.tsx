@@ -2,7 +2,7 @@ import {PrimaryButton, SecondaryButton} from "@/components/Buttons";
 import Link from "next/link";
 import Chart from 'chart.js/auto';
 import {useEffect, useState} from "react";
-import {DataResponse} from "@/services/types";
+import {WebsiteResponse} from "@/services/types";
 import {HeaderSkeleton} from "@/components/Skeletons";
 import {getData} from "@/services/WhitePebble";
 
@@ -23,10 +23,12 @@ const StatBox = ({stat, value, children}: any) => (
 )
 
 export default function Dashboard() {
-  const [data, setData] = useState<DataResponse | undefined>(undefined)
+  const [data, setData] = useState<WebsiteResponse | undefined>(undefined)
 
   useEffect(() => {
     getData().then(res => {
+      if (!res.data.success)
+        return alert('An error occurred whilst fetching website data')
       setData(res.data)
     })
   }, [])

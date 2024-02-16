@@ -10,8 +10,13 @@ export type DataPoint = {
   tickets: number
 }
 
-export type DataResponse = {
+export type WebsiteResponse = ApiResponse & {
   user: User
   data: DataPoint[]
   raffles: number
+}
+
+export type ApiResponse = {
+  success: boolean
+  message?: string
 }
