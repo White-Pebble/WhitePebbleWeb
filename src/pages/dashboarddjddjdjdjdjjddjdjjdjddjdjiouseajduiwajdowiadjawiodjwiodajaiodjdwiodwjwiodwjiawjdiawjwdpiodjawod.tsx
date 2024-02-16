@@ -121,7 +121,7 @@ export default function Dashboard() {
       <h1 className='text-4xl'>Welcome Back</h1>
       {/* Stats Row */}
       <div className='flex flex-col gap-3 md:flex-row md:justify-between w-full'>
-        <StatBox stat='Raffles Joined' value={data?.raffles}>
+        <StatBox stat='Raffles Joined' value={data ? 204 : undefined}>
           <Link href='https://rustclash.com/raffle' target='_blank'>
             <SecondaryButton text='View Raffles' />
           </Link>
