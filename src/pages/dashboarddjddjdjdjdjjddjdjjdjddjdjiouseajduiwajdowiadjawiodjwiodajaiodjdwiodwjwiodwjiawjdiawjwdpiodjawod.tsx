@@ -4,6 +4,7 @@ import Chart from 'chart.js/auto';
 import {useEffect, useState} from "react";
 import {DataResponse} from "@/services/types";
 import {HeaderSkeleton} from "@/components/Skeletons";
+import {getData} from "@/services/WhitePebble";
 
 const StatBox = ({stat, value, children}: any) => (
   <div className='trans skew-x-2 hover:skew-x-6 hover:scale-95 tile p-2 flex flex-col justify-between w-full shadow-md h-40 bg-black/90 z-20 backdrop-blur-sm rounded-md'>
@@ -23,6 +24,12 @@ const StatBox = ({stat, value, children}: any) => (
 
 export default function Dashboard() {
   const [data, setData] = useState<DataResponse | undefined>(undefined)
+
+  useEffect(() => {
+    getData().then(res => {
+      setData(res.data)
+    })
+  }, [])
 
   useEffect(() => {
     // Only run if data exists
