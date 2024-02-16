@@ -27,8 +27,10 @@ export default function Dashboard() {
 
   useEffect(() => {
     getData().then(res => {
-      if (!res.data.success)
-        return alert('An error occurred whilst fetching website data')
+      if (!res.data.success) {
+        console.log(res.data.message)
+        return alert('An error occurred whilst fetching website data. Check console for more information')
+      }
       setData(res.data)
     })
   }, [])
