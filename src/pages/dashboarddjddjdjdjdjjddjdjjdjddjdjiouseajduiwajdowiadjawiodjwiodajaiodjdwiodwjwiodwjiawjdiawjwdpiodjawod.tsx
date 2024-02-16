@@ -7,7 +7,7 @@ import {HeaderSkeleton} from "@/components/Skeletons";
 import {getData} from "@/services/WhitePebble";
 
 const StatBox = ({stat, value, children}: any) => (
-  <div className='trans skew-x-2 hover:skew-x-6 hover:scale-95 tile p-2 flex flex-col justify-between w-full shadow-md h-40 bg-black/90 z-20 backdrop-blur-sm rounded-md'>
+  <div className='trans skew-x-2 hover:skew-x-6 hover:scale-95 tile p-3 flex flex-col justify-between w-full shadow-md h-40 bg-black/90 z-20 backdrop-blur-sm rounded-md'>
     <p className='text-base font-light'>{stat}</p>
     <div className='items-end flex flex-row min-w-full justify-between'>
       {value ? (
