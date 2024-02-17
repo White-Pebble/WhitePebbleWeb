@@ -1,10 +1,11 @@
 import {PrimaryButton, SecondaryButton} from "@/components/Buttons";
 import Link from "next/link";
 import Chart from 'chart.js/auto';
-import {useEffect, useState} from "react";
+import {MutableRefObject, useEffect, useRef, useState} from "react";
 import {WebsiteResponse} from "@/services/types";
 import {HeaderSkeleton} from "@/components/Skeletons";
 import {getData} from "@/services/WhitePebble";
+import {Modal} from "@/components/ModalProvider";
 
 const StatBox = ({stat, value, children}: any) => (
   <div className='trans skew-x-2 hover:skew-x-6 hover:scale-95 tile p-3 flex flex-col justify-between w-full shadow-md h-40 bg-black/90 z-20 backdrop-blur-sm rounded-md'>
@@ -24,6 +25,7 @@ const StatBox = ({stat, value, children}: any) => (
 
 export default function Dashboard() {
   const [data, setData] = useState<WebsiteResponse | undefined>(undefined)
+  let old: MutableRefObject<Chart<"line", number[], string> | undefined> = useRef()
 
   useEffect(() => {
     getData().then(res => {
@@ -33,14 +35,26 @@ export default function Dashboard() {
       }
       setData(res.data)
     })
+
+    window.onfocus = () => {
+      setData(undefined)
+      getData().then(res => {
+        if (!res.data.success) {
+          console.log(res.data.message)
+          return alert('An error occurred whilst fetching website data. Check console for more information')
+        }
+        setData(res.data)
+      })
+    }
   }, [])
 
   useEffect(() => {
     // Only run if data exists
     if (data === undefined)
       return
-
-    new Chart(
+    if (old.current !== undefined)
+      old.current.destroy()
+    old.current = new Chart(
       document.getElementById('graph') as any,
       {
         type: 'line',
@@ -122,7 +136,7 @@ export default function Dashboard() {
 
   return (
     <div className='flex flex-col gap-8 w-full h-full max-w-6xl'>
-      <h1 className='text-4xl'>Welcome Back</h1>
+      <h1 className='text-4xl'>Welcome Back{data !== undefined && ','} <span className='rustclash-gr'>{data !== undefined && data.user.name}</span></h1>
       {/* Stats Row */}
       <div className='flex flex-col gap-3 md:flex-row md:justify-between w-full'>
         <StatBox stat='Raffles Joined' value={data ? 204 : undefined}>
@@ -131,7 +145,10 @@ export default function Dashboard() {
           </Link>
         </StatBox>
         <StatBox stat='Tickets Remaining' value={data?.user.tickets}>
-          <PrimaryButton icon='/raffle.svg' text='Buy More' />
+          <PrimaryButton onClick={() => {
+            // @ts-ignore
+            window.setModal(Modal.BUY_TICKETS)
+          }} icon='/raffle.svg' text='Buy More' />
         </StatBox>
         <StatBox stat='Balance' value={data ? `$${data?.user.balance}` : undefined}>
           <SecondaryButton icon='/ltc.svg' text='Copy LTC' />

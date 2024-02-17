@@ -3,6 +3,7 @@ import {Onest} from "next/font/google";
 import Head from "next/head";
 import "../styles/globals.css"
 import Image from "next/image";
+import {ModalProvider} from "@/components/ModalProvider";
 
 const font = Onest({
   subsets: ['latin'],
@@ -17,6 +18,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <title>White Pebble</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
+      <ModalProvider />
       {/* Logo :D */}
       <div className='absolute top-4 left-4 gap-1.5 flex flex-row items-center'>
         <Image width={40} height={40} src='/logo.webp' alt='Logo' />
