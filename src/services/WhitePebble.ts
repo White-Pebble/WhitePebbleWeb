@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {AppMe, AppResponse, ClashMe, Point, Website} from "@/services/types";
 
-axios.defaults.baseURL = 'http://localhost:8080'
+axios.defaults.baseURL = 'https://api.kade.bet:8080/'
 axios.defaults.validateStatus = status => (status >= 200 && status < 420) || status === 500
 
 // JWT interceptor! :D
