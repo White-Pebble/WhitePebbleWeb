@@ -91,7 +91,7 @@ export default function MyApp({Component, pageProps}: AppProps) {
               <h1 className='tracking-[4px] font-extrabold -translate-x-2 opacity-40 text-xs mb-0.5'>WEBSITES</h1>
               <TabButton href='/' name='Overview' available={available} />
               <TabButton href='/?site=rustclash' name='RustClash' icon='/rustclash-diamond.svg' available={available} />
-              <TabButton href='/?site=clash' name='Clash.gg' icon='/clash-diamond.svg' available={available} />
+              <TabButton href='/?site=clash' name='Clash' icon='/clash-diamond.svg' available={available} />
             </div>
           )
         }
