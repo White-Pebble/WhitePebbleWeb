@@ -33,7 +33,7 @@ const Overview = ({statsMap, available, user}: PageProps & {statsMap: { [key: st
     <div className='flex flex-col gap-14 min-w-full min-h-full'>
       {/* Top */}
       <div className='flex flex-col gap-4'>
-        <h1 className='text-4xl'>👋 Welcome Back, <span className='rustclash-gr'>{user.username}</span></h1>
+        <h1 className='text-2xl lg:text-4xl'>👋 Welcome Back, <span className='rustclash-gr'>{user.username}</span></h1>
         {/* Rows */}
         <div className='min-w-full flex flex-col lg:flex-row justify-between gap-2'>
           <StatBox stat='Balance Overall' value={totalBalance === undefined ? undefined : `$${totalBalance.toFixed(2)}`}/>
@@ -349,7 +349,7 @@ export default function WebsiteStats({user, available}: PageProps) {
         const isActive = page === currentPage.toString()
         const El = Mapping[page]
         return (
-          <div className={`${isActive ? 'opacity-100 delay-200' : 'opacity-0 invisible'} px-12 pb-6 lg:px-0 trans absolute top-0 bottom-0 left-0 right-0`} key={page}>
+          <div className={`${isActive ? 'opacity-100 delay-200' : 'opacity-0 invisible'} px-6 pb-6 lg:px-0 trans absolute top-0 bottom-0 left-0 right-0`} key={page}>
             <El statsMap={statsMap} user={user} available={available} />
           </div>
         )
