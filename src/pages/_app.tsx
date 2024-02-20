@@ -78,7 +78,7 @@ export default function MyApp({Component, pageProps}: AppProps) {
         {/* Logo :D */}
         <div className='gap-1.5 flex flex-row items-center'>
           <Image width={40} height={40} src='/logo.webp' alt='Logo' />
-          <h1 className='no-m'>White <span className='uppercase tracking-widest opacity-40 text-xs'>Pebble</span></h1>
+          <h1 className='no-m items-center gap-1.5'>White <span className='uppercase tracking-widest opacity-40 text-xs'>Pebble</span></h1>
         </div>
 
         {/* Mobile Tabs */}
