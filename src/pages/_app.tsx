@@ -118,7 +118,7 @@ export default function MyApp({Component, pageProps}: AppProps) {
             </div>
           ) : (
             <div className='w-full h-full flex items-center justify-center'>
-              <div className='relative w-full h-full flex items-center px-5 lg:px-0 justify-center max-w-6xl'>
+              <div className='relative w-full h-full flex items-center px-12 lg:px-0 justify-center max-w-6xl'>
                 <Component user={user} available={available} {...pageProps} />
               </div>
             </div>
