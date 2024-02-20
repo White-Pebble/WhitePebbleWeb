@@ -82,11 +82,13 @@ export default function MyApp({Component, pageProps}: AppProps) {
         </div>
 
         {/* Mobile Tabs */}
-        <div className='only-m ml-auto flex flex-row items-center gap-1'>
-          <TabButton href='/' name='Overview' available={available} />
-          <TabButton href='/?site=rustclash' name='RustClash' icon='/rustclash-diamond.svg' available={available} />
-          <TabButton href='/?site=clash' name='Clash' icon='/clash-diamond.svg' available={available} />
-        </div>
+        {(user && available) && (
+          <div className='only-m ml-auto flex flex-row items-center gap-1'>
+            <TabButton href='/' name='Overview' available={available}/>
+            <TabButton href='/?site=rustclash' name='RustClash' icon='/rustclash-diamond.svg' available={available}/>
+            <TabButton href='/?site=clash' name='Clash' icon='/clash-diamond.svg' available={available}/>
+          </div>
+        )}
       </div>
 
       {/* Bottom Content */}
