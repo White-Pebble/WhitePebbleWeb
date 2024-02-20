@@ -34,7 +34,7 @@
   }
 
   .only-m {
-
+    @apply lg:!hidden lg:!invisible !visible !flex
   }
 
   .trans {

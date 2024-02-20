@@ -74,11 +74,18 @@ export default function MyApp({Component, pageProps}: AppProps) {
       <ModalProvider />
 
       {/* Top Bar */}
-      <div className='flex min-w-full px-6 h-16 flex-row items-center justify-start'>
+      <div className='flex min-w-full px-6 h-16 gap-6 flex-row items-center justify-start'>
         {/* Logo :D */}
         <div className='gap-1.5 flex flex-row items-center'>
           <Image width={40} height={40} src='/logo.webp' alt='Logo' />
           <h1>White <span className='uppercase tracking-widest opacity-40 text-xs'>Pebble</span></h1>
+        </div>
+
+        {/* Mobile Tabs */}
+        <div className='only-m ml-auto flex flex-row items-center gap-1'>
+          <TabButton href='/' name='Overview' available={available} />
+          <TabButton href='/?site=rustclash' name='RustClash' icon='/rustclash-diamond.svg' available={available} />
+          <TabButton href='/?site=clash' name='Clash' icon='/clash-diamond.svg' available={available} />
         </div>
       </div>
 
