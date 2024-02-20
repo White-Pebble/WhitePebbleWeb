@@ -349,7 +349,7 @@ export default function WebsiteStats({user, available}: PageProps) {
         const isActive = page === currentPage.toString()
         const El = Mapping[page]
         return (
-          <div className={`${isActive ? 'opacity-100 delay-200' : 'opacity-0 invisible'} trans absolute top-0 bottom-0 left-0 right-0`} key={page}>
+          <div className={`${isActive ? 'opacity-100 delay-200' : 'opacity-0 invisible'} px-12 pb-6 lg:px-0 trans absolute top-0 bottom-0 left-0 right-0`} key={page}>
             <El statsMap={statsMap} user={user} available={available} />
           </div>
         )
