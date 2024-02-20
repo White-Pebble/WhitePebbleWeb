@@ -166,7 +166,7 @@ const RustStats = ({statsMap}: PageProps & {statsMap: { [key: string]: { user: C
     <div className='flex flex-col gap-14 min-w-full min-h-full'>
       {/* Top */}
       <div className='flex flex-col gap-4'>
-        <h1 className='text-4xl'><span className='rustclash-gr'>{user.name}</span> @ RustClash</h1>
+        <h1 className='text-2xl lg:text-4xl'><span className='rustclash-gr'>{user.name}</span> @ RustClash</h1>
         {/* Rows */}
         <div className='min-w-full flex flex-col lg:flex-row justify-between gap-2'>
           <StatBox stat='Balance' value={`$${user.balance.toFixed(2)}`}/>
@@ -289,7 +289,7 @@ const ClashStats = ({statsMap}: PageProps & {statsMap: { [key: string]: { user: 
     <div className='flex flex-col gap-14 min-w-full min-h-full'>
       {/* Top */}
       <div className='flex flex-col gap-4'>
-        <h1 className='text-4xl'><span className='rustclash-gr'>{user.name}</span> @ Clash</h1>
+        <h1 className='text-2xl lg:text-4xl'><span className='rustclash-gr'>{user.name}</span> @ Clash</h1>
         {/* Rows */}
         <div className='min-w-full flex flex-col lg:flex-row justify-between gap-2'>
           <StatBox stat='Balance' value={`$${user.balance.toFixed(2)}`}/>
