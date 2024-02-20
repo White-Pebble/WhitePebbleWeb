@@ -29,6 +29,14 @@
     @apply border-transparent outline-0 bg-transparent text-white text-sm
   }
 
+  .no-m {
+    @apply !hidden !invisible lg:!visible lg:!flex
+  }
+
+  .only-m {
+
+  }
+
   .trans {
     @apply transition-all duration-300 ease-out
   }

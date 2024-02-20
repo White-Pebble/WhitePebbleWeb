@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" width="100%" height="100%">
+    <path fill="#FFB666" d="M16 8H8V0l8 8Z" />
+    <path fill="#924600" d="M16 8H8v8l8-8Z" />
+    <path fill="url(#a)" d="M8 0 0 8h8V0Z" />
+    <path fill="#FFD627" d="M8 16 0 8h8v8Z" />
+    <path fill="url(#b)" d="M12.5454 8H3.45453l4.54545-8 4.54542 8Z" />
+    <path fill="url(#c)" d="M12.5454 8H3.45453l4.54545 8 4.54542-8Z" />
+    <defs>
+        <linearGradient id="a" x1="7.81818" x2="1.81818" y1="0.18182" y2="8" gradientUnits="userSpaceOnUse">
+            <stop offset="0.434" stop-color="#E68C22" />
+            <stop offset="0.804" stop-color="#FFD327" />
+        </linearGradient>
+        <linearGradient id="b" x1="3.63639" x2="9.81817" y1="8" y2="4" gradientUnits="userSpaceOnUse">
+            <stop offset="0.398" stop-color="#EF9C27" />
+            <stop offset="1" stop-color="#965005" />
+        </linearGradient>
+        <linearGradient id="c" x1="5.81816" x2="12.1818" y1="12.3636" y2="8" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F5A129" />
+            <stop offset="1" stop-color="#914C01" />
+        </linearGradient>
+    </defs>
+</svg>
