@@ -36,7 +36,7 @@ const TabButton = ({href, name, icon, available}: any) => {
 
   return (
     <Link href={href} className={`${active ? '!opacity-100' : 'opacity-40'} hover:opacity-60 flex trans flex-row items-center gap-1.5`}>
-      <Image className={icon === undefined ? 'opacity-0 invisible' : ''} width={20} height={20} src={icon || '/password.svg'} alt='Website Logo'/>
+      <Image className={`${icon === undefined ? 'opacity-0 invisible' : ''} no-m`} width={20} height={20} src={icon || '/password.svg'} alt='Website Logo'/>
       <h1 className='text-sm'>{name}</h1>
     </Link>
   )
