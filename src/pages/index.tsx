@@ -36,7 +36,7 @@ const Overview = ({statsMap, available, user}: PageProps & {statsMap: { [key: st
         <h1 className='text-4xl'>👋 Welcome Back, <span className='rustclash-gr'>{user.username}</span></h1>
         {/* Rows */}
         <div className='min-w-full flex flex-col lg:flex-row justify-between gap-2'>
-          <StatBox stat='Balance Overall' value={totalBalance === undefined ? undefined : `$${totalBalance}`}/>
+          <StatBox stat='Balance Overall' value={totalBalance === undefined ? undefined : `$${totalBalance.toFixed(2)}`}/>
           <StatBox stat='Tickets Overall' value={totalTickets}/>
           <StatBox stat='Accounts' value={available.length}/>
         </div>
